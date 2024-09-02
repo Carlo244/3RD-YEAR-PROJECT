@@ -18,7 +18,6 @@ CREATE TABLE Friends (
     DateAdded TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
 -- Create Groups Table
 CREATE TABLE Groups (
     GroupID INT AUTO_INCREMENT PRIMARY KEY,
@@ -26,7 +25,6 @@ CREATE TABLE Groups (
     CreatedBy INT,
     DateAdded TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 
 -- Create Posts Table
 CREATE TABLE Posts (
@@ -47,6 +45,7 @@ CREATE TABLE GroupMembershipRequests (
     IsGroupMemberShipAccepted BOOLEAN,
     DateAccepted TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 -- Insert Users with IDs
 INSERT INTO Users (UserID, Username, FirstName, LastName, DateOfBirth, Password)
 VALUES 
@@ -54,7 +53,7 @@ VALUES
 (2, 'janedoe', 'Jane', 'Doe', '1992-02-02', 'password456'),
 (3, 'michael23', 'Michael', 'Smith', '1988-03-03', 'password789'),
 (4, 'susanbrown', 'Susan', 'Brown', '1995-04-04', 'password101'),
-(5, 'tommiller', 'Tom', 'Miller', '1993-05-05', 'password202');
+(5, 'tommiller', 'Tom', 'Miller', '1993-05-05', 'password202'),
 (6, 'emilywhite', 'Emily', 'White', '1994-06-06', 'password303'),
 (7, 'davidjohnson', 'David', 'Johnson', '1991-07-07', 'password404'),
 (8, 'angelathomas', 'Angela', 'Thomas', '1990-08-08', 'password505'),
@@ -68,7 +67,7 @@ VALUES
 (2, 2, 3, TRUE),
 (3, 3, 4, FALSE),
 (4, 4, 5, TRUE),
-(5, 1, 5, TRUE);
+(5, 1, 5, TRUE),
 (6, 6, 7, TRUE),
 (7, 7, 8, TRUE),
 (8, 8, 9, FALSE),
@@ -82,7 +81,7 @@ VALUES
 (2, 'Book Club', 2),
 (3, 'Travel Enthusiasts', 3),
 (4, 'Music Lovers', 4),
-(5, 'Tech Innovators', 5);
+(5, 'Tech Innovators', 5),
 (6, 'Photography Enthusiasts', 6),
 (7, 'Gaming Club', 7),
 (8, 'Cycling Team', 8),
@@ -96,7 +95,7 @@ VALUES
 (2, 'Reading a new mystery novel!', 2, TRUE, FALSE, 2),
 (3, 'Excited for the next trip!', 3, FALSE, TRUE, 3),
 (4, 'Loving this new music album!', 4, TRUE, FALSE, 4),
-(5, 'Exploring new tech trends!', 5, FALSE, TRUE, 5);
+(5, 'Exploring new tech trends!', 5, FALSE, TRUE, 5),
 (6, 'Captured some amazing sunset shots!', 6, TRUE, FALSE, 6),
 (7, 'Excited for the new game release!', 7, TRUE, FALSE, 7),
 (8, 'Just completed a 50-mile bike ride!', 8, FALSE, TRUE, 8),
@@ -110,7 +109,7 @@ VALUES
 (2, 2, 3, TRUE),
 (3, 3, 4, FALSE),
 (4, 4, 5, TRUE),
-(5, 5, 1, TRUE);
+(5, 5, 1, TRUE),
 (6, 6, 7, TRUE),
 (7, 7, 8, TRUE),
 (8, 8, 9, FALSE),
