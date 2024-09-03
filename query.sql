@@ -83,7 +83,7 @@ FROM
 	Posts
 WHERE 
 GroupID = 2
-    AND IsOnlyForFriends = TRUE;
+    AND IsPublic = FALSE;
 
 
 
