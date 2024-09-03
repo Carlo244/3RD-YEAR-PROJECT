@@ -1,16 +1,16 @@
 -- Insert Users with IDs
 INSERT INTO Users (UserID, Username, FirstName, LastName, DateOfBirth, Password)
 VALUES 
-(1, 'johndoe', 'John', 'Doe', '1990-01-01', 'password123'),
-(2, 'janedoe', 'Jane', 'Doe', '1992-02-02', 'password456'),
-(3, 'michael23', 'Michael', 'Smith', '1988-03-03', 'password789'),
-(4, 'susanbrown', 'Susan', 'Brown', '1995-04-04', 'password101'),
-(5, 'tommiller', 'Tom', 'Miller', '1993-05-05', 'password202'),
-(6, 'emilywhite', 'Emily', 'White', '1994-06-06', 'password303'),
-(7, 'davidjohnson', 'David', 'Johnson', '1991-07-07', 'password404'),
-(8, 'angelathomas', 'Angela', 'Thomas', '1990-08-08', 'password505'),
-(9, 'roberthall', 'Robert', 'Hall', '1989-09-09', 'password606'),
-(10, 'carolkent', 'Carol', 'Kent', '1992-10-10', 'password707');
+(1, 'alicew', 'Alice', 'Williams', '2000-01-15', 'pass123'),
+(2, 'bobm', 'Bob', 'Morris', '2001-02-20', 'pass456'),
+(3, 'charlieh', 'Charlie', 'Harris', '1999-03-25', 'pass789'),
+(4, 'dianek', 'Diane', 'King', '2002-04-30', 'pass101'),
+(5, 'edwardj', 'Edward', 'Jones', '2003-05-05', 'pass202'),
+(6, 'fionas', 'Fiona', 'Smith', '2004-06-10', 'pass303'),
+(7, 'georgeb', 'George', 'Brown', '2005-07-15', 'pass404'),
+(8, 'hannahd', 'Hannah', 'Davis', '2006-08-20', 'pass505'),
+(9, 'ianp', 'Ian', 'Parker', '1999-09-25', 'pass606'),
+(10, 'jessicat', 'Jessica', 'Taylor', '2000-10-30', 'pass707');
 
 -- Insert Friends with IDs
 INSERT INTO Friends (FriendID, FriendWhoAdded, FriendBeingAdded, IsAccepted)
@@ -29,30 +29,30 @@ VALUES
 -- Insert Groups with IDs
 INSERT INTO Groups (GroupID, GroupName, CreatedBy)
 VALUES 
-(1, 'Fitness Group', 1),
-(2, 'Book Club', 2),
-(3, 'Travel Enthusiasts', 3),
-(4, 'Music Lovers', 4),
-(5, 'Tech Innovators', 5),
-(6, 'Photography Enthusiasts', 6),
-(7, 'Gaming Club', 7),
-(8, 'Cycling Team', 8),
-(9, 'Movie Buffs', 9),
-(10, 'Foodies', 10);
+(1, 'Yoga Enthusiasts', 1),
+(2, 'Cooking Club', 2),
+(3, 'Adventure Seekers', 3),
+(4, 'Art Lovers', 4),
+(5, 'Science Geeks', 5),
+(6, 'Nature Photographers', 6),
+(7, 'Chess Club', 7),
+(8, 'Runners Team', 8),
+(9, 'Film Critics', 9),
+(10, 'Gourmet Chefs', 10);
 
 -- Insert Posts with IDs
 INSERT INTO Posts (PostID, PostDescription, PostedBy, IsPublic, IsOnlyForFriends, GroupID)
 VALUES 
-(1, 'Morning workout complete!', 1, TRUE, FALSE, 1),
-(2, 'Reading a new mystery novel!', 2, TRUE, FALSE, 2),
-(3, 'Excited for the next trip!', 3, FALSE, TRUE, 3),
-(4, 'Loving this new music album!', 4, TRUE, FALSE, 4),
-(5, 'Exploring new tech trends!', 5, FALSE, TRUE, 5),
-(6, 'Captured some amazing sunset shots!', 6, TRUE, FALSE, 6),
-(7, 'Excited for the new game release!', 7, TRUE, FALSE, 7),
-(8, 'Just completed a 50-mile bike ride!', 8, FALSE, TRUE, 8),
-(9, 'Watched a classic movie today!', 9, TRUE, FALSE, 9),
-(10, 'Tried a new restaurant and loved it!', 10, FALSE, TRUE, 10);
+(1, 'Completed a relaxing yoga session!', 1, TRUE, FALSE, 1),
+(2, 'Tried a new recipe today!', 2, TRUE, FALSE, 2),
+(3, 'Planning the next adventure!', 3, FALSE, TRUE, 3),
+(4, 'Visited an art gallery!', 4, TRUE, FALSE, 4),
+(5, 'Discussing new scientific discoveries!', 5, FALSE, TRUE, 5),
+(6, 'Captured beautiful nature photos!', 6, TRUE, FALSE, 6),
+(7, 'Won a chess tournament!', 7, TRUE, FALSE, 7),
+(8, 'Completed a marathon!', 8, FALSE, TRUE, 8),
+(9, 'Reviewed a classic film!', 9, TRUE, FALSE, 9),
+(10, 'Cooked a gourmet meal!', 10, FALSE, TRUE, 10);
 
 -- Insert Group Membership Requests with IDs
 INSERT INTO GroupMembershipRequests (GroupMemberShipRequestsID, GroupID, GroupMemberUserID, IsGroupMemberShipAccepted)
