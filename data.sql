@@ -57,7 +57,7 @@ VALUES
 -- Insert Group Membership Requests with IDs
 INSERT INTO GroupMembershipRequests (GroupMemberShipRequestsID, GroupID, GroupMemberUserID, IsGroupMemberShipAccepted)
 VALUES 
-(1, 1, 2, TRUE),
+(1, 1, 2, FALSE),
 (2, 2, 3, TRUE),
 (3, 3, 4, FALSE),
 (4, 4, 5, TRUE),
