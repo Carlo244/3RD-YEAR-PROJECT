@@ -44,7 +44,7 @@ VALUES
 INSERT INTO Posts (PostID, PostDescription, PostedBy, IsPublic, IsOnlyForFriends, GroupID)
 VALUES 
 (1, 'Completed a relaxing yoga session!', 1, TRUE, FALSE, 1),
-(2, 'Tried a new recipe today!', 2, TRUE, FALSE, 2),
+(2, 'Tried a new recipe today!', 2, FALSE, FALSE, 2),
 (3, 'Planning the next adventure!', 3, FALSE, TRUE, 3),
 (4, 'Visited an art gallery!', 4, TRUE, FALSE, 4),
 (5, 'Discussing new scientific discoveries!', 5, FALSE, TRUE, 5),
