@@ -1,34 +1,88 @@
-<?php require_once 'dbConfig.php' ?>   
+<?php 
+require_once 'core/dbconfig.php';
+require_once 'core/models.php'; 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <style>
-        body{
-            font-family: "Comic-sans";
-        }
-        input {
-            font-size: auto;
-            height: 25px;
-            width: 200px;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<p><h3>Welcome guys</h3></p>
-    <form action="handleform.php" method="POST">
-    <p><label for="First_Name">First Name </label><input type="text" name="First_Name"></p>
-    <p><label for="Last_Name">Last Name </label><input type="text" name="Last_Name"></p>
-    <p><label for="YearOfExperience">Year Of Experience </label><input type="text" name="YearOfExperience"></p>
-    <p><label for="Specialization">Specialization </label><input type="text" name="Specialization"></p>
-    <p><label for="EmailAddress">EmailAddress </label><input type="text" name="EmailAddress"></p>
-    <p><label for="PhoneNumber">PhoneNumber </label><input type="text" name="PhoneNumber"></p>
-    <p><label for="ExpectedSalary">ExpectedSalary </label><input type="text" name="ExpectedSalary">
-        <input type="submit" name="InsertIntoRegistration">
-    </p>
-    </form>
+<div class="container">
+	<?php if (isset($_SESSION['message'])) { ?>
+		<h1 style="color: green; text-align: center; background-color: ghostwhite; border-style: solid;">	
+			<?php echo $_SESSION['message']; ?>
+		</h1>
+	<?php } unset($_SESSION['message']); ?>
+
+	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="GET">
+		<input type="text" name="searchInput" placeholder="Search here">
+		<input type="submit" name="searchBtn">
+	</form>
+
+	<p><a href="index.php">Clear Search Query</a></p>
+	<p><a href="insert.php">Insert New User</a></p>
+
+	<table style="width:100%; margin-top: 20px;">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Phone Number</th>
+			<th>Position Applied</th>
+			<th>Date Added</th>
+            <th>Actions</th>
+		</tr>
+
+		<?php if (!isset($_GET['searchBtn'])) { ?>
+			<?php $getAllUsers = getAllUsers($pdo); ?>
+				<?php foreach ($getAllUsers as $row) { ?>
+					<tr>
+						<td><?php echo $row['first_name']; ?></td>
+						<td><?php echo $row['last_name']; ?></td>
+						<td><?php echo $row['email']; ?></td>
+						<td><?php echo $row['phone_number']; ?></td>
+						<td><?php echo $row['position_applied']; ?></td>
+						<td><?php echo $row['application_date']; ?></td>
+						<td>
+                        <form action="edit_applicant.php" method="GET" style="display:inline;">
+                        <input type="hidden" name="applicant_id" value="<?php echo $row['applicant_id']; ?>">
+                        <button type="submit">Edit</button>
+                        <form action="delete_applicant.php" method="GET" style="display:inline;">
+                        <input type="hidden" name="applicant_id" value="<?php echo $row['applicant_id']; ?>">
+                        <button type="submit">Delete</button>
+                        </form>
+						</td>
+					</tr>
+			<?php } ?>
+			
+		<?php } else { ?>
+			<?php $searchForAUser =  searchForAUser($pdo, $_GET['searchInput']); ?>
+				<?php foreach ($searchForAUser as $row) { ?>
+					<tr>
+                        <td><?php echo $row['first_name']; ?></td>
+						<td><?php echo $row['last_name']; ?></td>
+						<td><?php echo $row['email']; ?></td>
+						<td><?php echo $row['phone_number']; ?></td>
+						<td><?php echo $row['position_applied']; ?></td>
+						<td><?php echo $row['application_date']; ?></td>
+						<td>
+                        <form action="edit_applicant.php" method="GET" style="display:inline;">
+                        <input type="hidden" name="applicant_id" value="<?php echo $row['applicant_id']; ?>">
+                        <button type="submit">Edit</button>
+                        <form action="delete_applicant.php" method="GET" style="display:inline;">
+                        <input type="hidden" name="applicant_id" value="<?php echo $row['applicant_id']; ?>">
+                        <button type="submit">Delete</button>
+                        </form>
+						</td>
+					</tr>
+				<?php } ?>
+		<?php } ?>	
+	</table>
+</div>
 </body>
 </html>
