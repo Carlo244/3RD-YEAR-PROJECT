@@ -1,0 +1,85 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+
+  .main {
+    max-width: auto; /* Main container width */
+    background: #ffffff; /* White background for the content */
+    padding: 30px; /* Space around the form */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+  }
+  
+  .formcontainer {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  input, textarea {
+    width: calc(100% - 20px); /* Ensures equal width for all fields with padding considered */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Prevents padding from affecting the field's width */
+  }
+  
+  textarea {
+    resize: vertical; /* Allows resizing vertically but keeps symmetry */
+    height: 100px; /* Sets default height */
+  }
+  
+  button {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  .jobPosts {
+    margin-top: 20px;
+  }
+  
+  .jobPosts {
+    background: #ffffff; /* White background for the box */
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Space inside the box */
+    margin-bottom: 20px; /* Space between posts */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .jobPosts h3 {
+    margin-top: 0; /* Remove margin above the heading */
+    color: #333; /* Darker color for the heading */
+  }
+  
+  .jobPosts p {
+    margin: 0; /* Remove margin for text */
+    color: #555; /* Slightly muted text color */
+  }
+  .jobPostContainer {
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid gray;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%; /* Adjust width as needed */
+    margin: 20px auto; /* Center horizontally */
+    padding: 20px;
+    text-align: left; /* Ensures text alignment looks consistent */
+}
+
