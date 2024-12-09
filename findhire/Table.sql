@@ -2,6 +2,7 @@ CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
+    full_name VARCHAR(255),
     role ENUM('APPLICANT', 'HR') NOT NULL
 );
 
@@ -20,7 +21,6 @@ CREATE TABLE Applications (
     application_id INT AUTO_INCREMENT PRIMARY KEY,
     job_id INT,
     applicant_id INT,
-    applicant_name VARCHAR(255),
     application_status ENUM('PENDING', 'ACCEPTED', 'REJECTED') DEFAULT 'PENDING',
     application_message TEXT,
     resume_path VARCHAR(255),
